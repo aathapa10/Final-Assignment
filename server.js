@@ -1,9 +1,9 @@
 /*********************************************************************************
-*  WEB322 – Assignment 05
+*  WEB322 – Assignment 06
 *  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  No part *  of this assignment has been copied manually or electronically from any other source 
 *  (including 3rd party web sites) or distributed to other students.
 * 
-*  Name: John Aeron Aragones   Student ID: 121107213   Date: Dec 9 ,2022
+*  Name: Aashish Thapa   Student ID: 129332219   Date: 8 April 2023
 *
 *  Online (Cyclic) Link: https://dead-red-shrimp-kit.cyclic.app
 *
@@ -28,9 +28,7 @@ function onHttpStart() {
 }
 
 
-//********************************************************************************************** */
-//ASS 4
-// setting up Handlebars
+
 app.engine('.hbs', exphbs.engine({
   extname: '.hbs', defaultLayout: 'main',
   helpers: {
@@ -87,7 +85,7 @@ app.use(function (req, res, next) {
   app.locals.activeRoute = (route == "/") ? "/" : route.replace(/\/$/, "");
   next();
 });
-//********************************************************************************************** */
+
 app.post("/student/update", ensureLogin, (req, res) => {
   console.log(req.body);
   res.render()
@@ -164,11 +162,10 @@ app.get("/images/add", ensureLogin, (req, res) => {
   res.render("addImage");
 });
 
-//********************************************************************************************** */
-// Urlencoded 
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Adding multer
+
 const storage = multer.diskStorage({
   destination: "./public/images/uploaded",
   filename: function (req, file, cb) {
@@ -178,7 +175,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 
-// Post Route
+
 app.post("/images/add", upload.single("imageFile"), (req, res) => {
   res.redirect("/images");
 });

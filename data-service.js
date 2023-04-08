@@ -1,8 +1,8 @@
-// *********************************************** ASSIGNMENT 5 *************************************************************
+*
 const Sequelize = require('sequelize');
 
-var sequelize = new Sequelize('lpuvneco', 'lpuvneco', 'q14PDogxGdwagYXbsZs0aAsVcz0uIXg-', {
-    host: 'peanut.db.elephantsql.com',
+var sequelize = new Sequelize('fflwrclz', 'fflwrclz', 'xcfpmCqWxFOv5P5-OKqfgvWftequ4KuD', {
+    host: '	raja.db.elephantsql.com ',
     dialect: 'postgres',
     port: 5432,
     dialectOptions: {
@@ -57,7 +57,7 @@ module.exports.initialize = function () {
 
 
 
-// Students *********************************************************************************************
+
 module.exports.addStudents = function (studentData) {
     return new Promise(function(resolve, reject)  {
         studentData.isInternationalStudent = studentData.isInternationalStudent ? true : false;
